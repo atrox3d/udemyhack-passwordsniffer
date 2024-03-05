@@ -35,21 +35,21 @@ def get_login_pass(body):
 
     for login in userfields:
         if login in body:
-            print(f"[+] {login}")
+            # print(f"[+] {login}")
             pass
         login_re = re.search('(%s=[^&]+)' % login, body, re.IGNORECASE)
         if login_re:
             user = login_re.group()
-            print(f"[:] {user}")
+            # print(f"[:] {user}")
 
     for passfield in passfields:
         if passfield in body:
-            print(f"[+] {passfield}")
+            # print(f"[+] {passfield}")
             pass
         pass_re = re.search('(%s=[^&]+)' % passfield, body, re.IGNORECASE)
         if pass_re:
             passwd = pass_re.group()
-            print(f"[:] {passwd}")
+            # print(f"[:] {passwd}")
 
     if user and passwd:
         return user, passwd
